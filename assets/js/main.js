@@ -197,6 +197,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // スポットライト演出（トップページのヒーローのみ）
+  var spotHero = document.querySelector(".hero");
+  var spotDark = document.querySelector(".spot-dark");
+  if (spotHero && spotDark && !prefersReduced) {
+    var spotX = null;
+    var spotT = 0;
+    var setSpot = function (x, y) {
+      spotDark.style.setProperty("--mx", x + "px");
+      spotDark.style.setProperty("--my", y + "px");
+    };
+    spotHero.addEventListener("mousemove", function (e) {
+      var r = spotHero.getBoundingClientRect();
+      spotX = e.clientX - r.left;
+      setSpot(e.clientX - r.left, e.clientY - r.top);
+    });
+    // マウスが動くまでは光がゆっくり巡回する
+    (function spotOrbit() {
+      if (spotX === null) {
+        spotT += 0.006;
+        var r = spotHero.getBoundingClientRect();
+        setSpot(
+          r.width * (0.5 + 0.33 * Math.cos(spotT)),
+          r.height * (0.45 + 0.28 * Math.sin(spotT * 1.3))
+        );
+      }
+      requestAnimationFrame(spotOrbit);
+    })();
+  }
+
   // 戻る/進むでキャッシュ復元されたときにフェード状態を解除
   window.addEventListener("pageshow", () => {
     document.body.classList.remove("is-leaving");

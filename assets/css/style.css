@@ -399,6 +399,57 @@ a { color: inherit; text-decoration: none; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
+/* ===== スポットライト演出（トップページのヒーローのみ） ===== */
+.spot-words {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.spot-words span {
+  position: absolute;
+  font-family: var(--serif);
+  font-size: clamp(16px, 2vw, 26px);
+  letter-spacing: 0.24em;
+  color: var(--gold-soft);
+  text-shadow: 0 0 20px rgba(203, 185, 140, 0.5);
+}
+
+/* カーソル位置に穴の開いた闇。光の中だけ言葉が見える */
+.spot-dark {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 260px at var(--mx, 50%) var(--my, 42%),
+    rgba(4, 8, 16, 0) 0%,
+    rgba(4, 8, 16, 0) 32%,
+    rgba(4, 8, 16, 0.9) 76%
+  );
+}
+
+.spot-hint {
+  position: absolute;
+  left: 36px;
+  bottom: 30px;
+  z-index: 3;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* モバイル・タブレットでは通常表示（文字と重なるのを防ぐ） */
+@media (max-width: 900px) {
+  .spot-words, .spot-dark, .spot-hint { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spot-dark, .spot-hint { display: none; }
+  .spot-words span { opacity: 0.3; }
+}
+
 /* ===== Buttons ===== */
 .btn {
   position: relative;
