@@ -1288,3 +1288,141 @@ body.is-leaving {
   .stat { padding: 36px 20px; }
   .ghost { font-size: 96px; top: 28px; }
 }
+/* ===== 事業領域パネル（都市選択パネルの構造） ===== */
+.domain-section {
+  position: relative;
+  background: var(--navy-black);
+}
+
+.domain-head {
+  text-align: center;
+  padding: 96px 24px 56px;
+}
+
+.domain-head .section-label { color: var(--gold-soft); }
+.domain-head .section-title { color: var(--white); }
+.domain-head .section-title::after { background: var(--gold-line); }
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.domain-panel {
+  position: relative;
+  min-height: 64vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 56px 40px 64px;
+  overflow: hidden;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(165deg, #1a2c50 0%, #101f3d 55%, #0a1426 100%);
+  transition: transform 0.5s ease;
+}
+
+.domain-panel:first-child { border-left: 1px solid rgba(255, 255, 255, 0.08); }
+
+.domain-panel:nth-child(2) { background: linear-gradient(165deg, #16233f 0%, #0e1c38 60%, #0a1426 100%); }
+.domain-panel:nth-child(3) { background: linear-gradient(165deg, #1c3461 0%, #12234a 55%, #0a1426 100%); }
+.domain-panel:nth-child(4) { background: linear-gradient(165deg, #132038 0%, #0d1830 60%, #080f20 100%); }
+
+/* 背景の大きな番号 */
+.domain-num {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: clamp(90px, 9vw, 150px);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transition: color 0.5s;
+}
+
+/* ホバーで金の光がにじむ */
+.domain-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 50% 100%, rgba(182, 160, 105, 0.22) 0%, rgba(10, 20, 38, 0) 65%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.domain-panel::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%; height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.domain-panel:hover::before { opacity: 1; }
+.domain-panel:hover::after { transform: scaleX(1); }
+.domain-panel:hover .domain-num { color: rgba(182, 160, 105, 0.18); }
+
+.domain-en {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: clamp(26px, 2.4vw, 36px);
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  margin-bottom: 10px;
+}
+
+.domain-name {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+
+.domain-desc {
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 28px;
+}
+
+.domain-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  letter-spacing: 0.24em;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.4s;
+}
+
+.domain-more::after {
+  content: "";
+  width: 40px; height: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  transition: width 0.4s, background 0.4s;
+}
+
+.domain-panel:hover .domain-more { color: var(--gold-soft); }
+.domain-panel:hover .domain-more::after { width: 64px; background: var(--gold); }
+
+
+@media (max-width: 1024px) {
+  .domain-grid { grid-template-columns: repeat(2, 1fr); }
+  .domain-panel { min-height: 44vh; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+}
+
+@media (max-width: 600px) {
+  .domain-grid { grid-template-columns: 1fr; }
+  .domain-panel { min-height: 0; padding: 44px 28px 48px; }
+  .domain-num { font-size: 80px; }
+  .domain-head { padding: 72px 24px 40px; }
+}
