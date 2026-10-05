@@ -855,6 +855,41 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.06em;
 }
 
+/* 会社概要の事業内容（4つの事業領域） */
+.biz-areas { display: grid; gap: 15px; }
+
+.biz-area-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.biz-area-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.14em;
+  color: var(--navy);
+}
+
+.biz-area-en {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+.biz-area-items { line-height: 1.85; }
+
+/* 項目は語の途中で折り返さず、区切りごとに改行する */
+.biz-area-items span { display: inline-block; }
+.biz-area-items span:not(:last-child)::after {
+  content: "／";
+  color: var(--navy-soft);
+}
+
 /* ===== Contact ===== */
 .section-contact {
   background:
