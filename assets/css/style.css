@@ -55,6 +55,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .pc-only { display: inline; }
+.keep-together { display: inline-block; }
 
 /* ===== Header ===== */
 .site-header {
