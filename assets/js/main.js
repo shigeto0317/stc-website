@@ -1,4 +1,3 @@
-// ST CONSULTING corporate site
 
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("header");
@@ -6,14 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const globalNav = document.getElementById("globalNav");
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // 現在ページのナビを強調
   const currentPage = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".global-nav a").forEach((a) => {
     const href = (a.getAttribute("href") || "").split("#")[0];
     if (href === currentPage) a.classList.add("is-current");
   });
 
-  // ヘッダー：スクロールで白背景に切り替え＋下スクロールで隠す
   let lastY = window.scrollY;
   const onScroll = () => {
     const y = window.scrollY;
@@ -30,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // モバイルメニュー開閉
   navToggle.addEventListener("click", () => {
     const open = globalNav.classList.toggle("is-open");
     navToggle.classList.toggle("is-open", open);
@@ -38,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
   });
 
-  // メニュー内リンクを押したら閉じる
   globalNav.querySelectorAll("a").forEach((a) => {
     a.addEventListener("click", () => {
       globalNav.classList.remove("is-open");
@@ -47,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ヒーローの見出しを1文字ずつ立ち上げる
   const heroTitle = document.querySelector(".hero-title");
   if (heroTitle && !prefersReduced) {
     const nodes = Array.from(heroTitle.childNodes);
@@ -69,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // スクロール連動のフェードイン
   const reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -88,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // 実績数値のカウントアップ
   const statValues = document.querySelectorAll(".stat-value");
   const fmt = (n) => n.toLocaleString("ja-JP");
 
@@ -102,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = performance.now();
     const tick = (now) => {
       const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 4); // 後半をゆっくり
+      const eased = 1 - Math.pow(1 - p, 4);
       el.textContent = fmt(Math.round(target * eased));
       if (p < 1) requestAnimationFrame(tick);
     };
@@ -125,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     statValues.forEach((el) => statIo.observe(el));
   }
 
-  // パララックス（ロゴ透かし・背景の英字・ヒーロー本文の退場）
   const heroLogo = document.querySelector(".hero-logo-bg");
   const heroInner = document.querySelector(".hero-inner");
   const ghosts = document.querySelectorAll(".ghost");
@@ -160,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
     parallax();
   }
 
-  // 金の粒子（ヒーロー・下層ページタイトル帯・CTA帯に散らす）
   if (!prefersReduced) {
     document.querySelectorAll(".hero, .page-hero, .cta-band, .section-contact").forEach((host) => {
       const layer = document.createElement("div");
@@ -181,13 +171,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ページ遷移フェード（サイト内リンクのみ）
   if (!prefersReduced) {
     document.querySelectorAll('a[href$=".html"], a[href*=".html#"]').forEach((a) => {
       a.addEventListener("click", (e) => {
         const href = a.getAttribute("href");
         if (!href || a.target === "_blank") return;
-        // 同一ページ内アンカーは対象外
         const [file, hash] = href.split("#");
         if (file === currentPage && hash) return;
         e.preventDefault();
@@ -197,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // スポットライト演出（トップページのヒーローのみ）
   var spotHero = document.querySelector(".hero");
   var spotDark = document.querySelector(".spot-dark");
   if (spotHero && spotDark && !prefersReduced) {
@@ -212,7 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
       spotX = e.clientX - r.left;
       setSpot(e.clientX - r.left, e.clientY - r.top);
     });
-    // マウスが動くまでは光がゆっくり巡回する
     (function spotOrbit() {
       if (spotX === null) {
         spotT += 0.006;
@@ -226,12 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
   }
 
-  // 戻る/進むでキャッシュ復元されたときにフェード状態を解除
   window.addEventListener("pageshow", () => {
     document.body.classList.remove("is-leaving");
   });
 
-  // お問い合わせフォーム：URL未設定の間は案内を表示
   const contactBtn = document.getElementById("contactFormBtn");
   if (contactBtn && contactBtn.getAttribute("href") === "#") {
     contactBtn.addEventListener("click", (e) => {

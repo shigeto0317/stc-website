@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>株式会社ST CONSULTING｜教育・企画・営業・業務支援のコンサルティング</title>
 <meta name="description" content="株式会社ST CONSULTINGは、自分の人生を主体的に考えて行動ができる人財を一人でも多く創出することをミッションに、教育・企画・営業・業務支援の各領域で貴社に伴走するコンサルティングファームです。">
+<link rel="canonical" href="https://www.st-consul.co.jp/">
 <meta property="og:title" content="株式会社ST CONSULTING">
-<meta property="og:description" content="自分の人生を主体的に考えて行動ができる人財を、一人でも多く創出します。教育・企画・営業・業務支援のコンサルティング。">
+<meta property="og:description" content="株式会社ST CONSULTINGは、自分の人生を主体的に考えて行動ができる人財を一人でも多く創出することをミッションに、教育・企画・営業・業務支援の各領域で貴社に伴走するコンサルティングファームです。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.st-consul.co.jp/">
 <meta property="og:site_name" content="株式会社ST CONSULTING">
@@ -15,192 +16,234 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@900&family=Shippori+Mincho:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/p.css?v=25">
 </head>
-<body>
+<body class="p-body">
 
-<!-- ===== Header ===== -->
-<header class="site-header" id="header">
-  <div class="header-inner">
-    <a href="index.html" class="header-logo" aria-label="株式会社ST CONSULTING">
-      <img src="assets/img/logo_full_white.png" alt="株式会社ST CONSULTING" class="logo-on-dark" width="948" height="96">
-      <img src="assets/img/logo_full_color.png" alt="" class="logo-on-light" width="948" height="96" aria-hidden="true">
-    </a>
-    <nav class="global-nav" id="globalNav" aria-label="メインメニュー">
-      <ul>
-        <li><a href="index.html">トップ</a></li>
-        <li><a href="about.html">私たちについて</a></li>
-        <li><a href="service.html">事業領域</a></li>
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="contact.html" class="nav-contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="globalNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<div class="p-canvas" aria-hidden="true">
+  <div class="p-wall" id="pWall"></div>
+  <div class="p-veil" id="pVeil"></div>
+</div>
+
+<header class="p-header" id="pHeader">
+  <a href="index.html" class="p-logo" aria-label="株式会社ST CONSULTING トップへ">
+    <img src="assets/img/logo_full_white.png" alt="" class="p-logo__w" width="948" height="96">
+    <img src="assets/img/logo_full_color.png" alt="" class="p-logo__c" width="948" height="96">
+  </a>
+  <nav class="p-gnav" aria-label="メインメニュー">
+    <a href="about.html"><span class="en">ABOUT</span><span class="ja">私たちに<wbr>ついて</span></a>
+    <a href="service.html"><span class="en">SERVICE</span><span class="ja">事業領域</span></a>
+    <a href="#approach"><span class="en">APPROACH</span><span class="ja">進め方</span></a>
+    <a href="company.html"><span class="en">COMPANY</span><span class="ja">会社概要</span></a>
+    <a href="contact.html"><span class="en">CONTACT</span><span class="ja">お問い合わせ</span></a>
+  </nav>
+  <button class="p-menu-btn" id="pMenuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="pMenu"><span></span><span></span></button>
 </header>
+
+<div class="p-menu" id="pMenu" aria-hidden="true">
+  <div class="p-menu__inner">
+    <a href="index.html"><span class="en">TOP</span>トップ</a>
+    <a href="about.html"><span class="en">ABOUT</span>私たちに<wbr>ついて</a>
+    <a href="service.html"><span class="en">SERVICE</span>事業領域</a>
+    <a href="#approach" data-close><span class="en">APPROACH</span>進め方</a>
+    <a href="company.html"><span class="en">COMPANY</span>会社概要</a>
+    <a href="contact.html"><span class="en">CONTACT</span>お問い合わせ</a>
+  </div>
+</div>
 
 <main>
 
-<!-- ===== Hero ===== -->
-<section class="hero">
-  <div class="hero-inner">
-    <p class="hero-en reveal">ST CONSULTING Co., Ltd.</p>
-    <h1 class="hero-title">自分の人生を、<br>主体的に。</h1>
-    <p class="hero-lead reveal">教育・企画・営業・業務支援。<br>
-    経営の現場に伴走し、主体的に行動できる人と組織を育てます。</p>
-    <div class="hero-cta reveal">
-      <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
-      <a href="about.html" class="hero-more">私たちについて</a>
-    </div>
-  </div>
-  <div class="hero-logo-bg" aria-hidden="true">
-    <img src="assets/img/logo_mark_gray.png" alt="">
-  </div>
-  <div class="spot-words" aria-hidden="true">
-    <span style="left:40%; top:10%;">変化</span>
-    <span style="left:6%;  top:16%;">可能性</span>
-    <span style="left:72%; top:12%;">主体性</span>
-    <span style="left:86%; top:34%;">学び</span>
-    <span style="left:64%; top:60%;">信頼</span>
-    <span style="left:88%; top:76%;">成果</span>
-    <span style="left:60%; top:86%;">挑戦</span>
-    <span style="left:20%; top:88%;">成長</span>
-  </div>
-  <div class="spot-dark" aria-hidden="true"></div>
-  <p class="spot-hint">— 光を動かして、言葉を見つけてください</p>
-  <a href="#mission" class="scroll-sign" aria-hidden="true"><span>Scroll</span></a>
-</section>
-
-<!-- ===== Mission digest ===== -->
-<section class="section" id="mission">
-  <span class="ghost" aria-hidden="true">Mission</span>
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="section-label">Mission</p>
-      <h2 class="section-title">ミッション</h2>
-    </div>
-    <div class="mission-body reveal">
-      <p class="mission-statement">自分の人生を主体的に考えて<br class="pc-only">行動ができる人財を、<span class="keep-together">一人でも多く創出します。</span></p>
-      <p class="mission-text">
-        変化の激しい時代に、組織と個人に本当に必要なのは「自ら考え、自ら動く力」。<br>
-        その力を育む人づくりを通じて、社会に貢献します。
-      </p>
-      <p class="more-wrap"><a href="about.html" class="more-link">View More</a></p>
-    </div>
+<section class="p-hero" id="top">
+  <div class="p-hero__stick">
+    <h1 class="p-catch" id="pCatch">
+      <span class="p-catch__row">We are partners</span>
+      <span class="p-catch__row p-catch__row--in">in <em>growth</em> for</span>
+      <span class="p-catch__row"><em>self-driven</em> lives.</span>
+      <span class="p-catch__ja">自分の<wbr>人生を、<wbr>主体的に。</span>
+    </h1>
+    <a href="#mission" class="p-scroll" aria-label="下へスクロール"><span>SCROLL</span></a>
   </div>
 </section>
 
-<!-- ===== Service digest（I案採用：大型パネル構造） ===== -->
-<section class="domain-section" id="service">
-  <div class="domain-head reveal">
-    <p class="section-label">Service</p>
-    <h2 class="section-title">事業領域</h2>
-  </div>
-  <div class="domain-grid">
-    <a href="service.html#education" class="domain-panel reveal">
-      <span class="domain-num" aria-hidden="true">01</span>
-      <p class="domain-en">Education</p>
-      <p class="domain-name">教育系</p>
-      <p class="domain-desc">教育企画設計・研修講師・コーチング。人が育つ仕組みをつくる。</p>
-      <span class="domain-more">View More</span>
-    </a>
-    <a href="service.html#planning" class="domain-panel reveal">
-      <span class="domain-num" aria-hidden="true">02</span>
-      <p class="domain-en">Planning</p>
-      <p class="domain-name">企画系</p>
-      <p class="domain-desc">企画立案・資料作成・新規事業プロデュース。構想を形にする。</p>
-      <span class="domain-more">View More</span>
-    </a>
-    <a href="service.html#sales" class="domain-panel reveal">
-      <span class="domain-num" aria-hidden="true">03</span>
-      <p class="domain-en">Sales</p>
-      <p class="domain-name">営業系</p>
-      <p class="domain-desc">営業戦略立案から新規開拓まで。成果に直結する営業支援。</p>
-      <span class="domain-more">View More</span>
-    </a>
-    <a href="service.html#operation" class="domain-panel reveal">
-      <span class="domain-num" aria-hidden="true">04</span>
-      <p class="domain-en">Operation</p>
-      <p class="domain-name">業務支援</p>
-      <p class="domain-desc">業務フロー整備・システム化・各種代行。現場を強くする。</p>
-      <span class="domain-more">View More</span>
-    </a>
+<section class="p-sec p-mission" id="mission">
+  <div class="p-wrap">
+    <p class="p-label p-label--lg rv">MISSION</p>
+    <p class="p-statement rv">自分の<wbr>人生を<wbr>主体的に<wbr>考えて<wbr>行動が<wbr>できる<wbr>人財を、<br class="pc">一人でも<wbr>多く<wbr>創出します。</p>
+    <p class="p-text rv">変化の<wbr>激しい<wbr>時代に、<wbr>組織と<wbr>個人に<wbr>本当に<wbr>必要なのは<wbr>「自ら<wbr>考え、<wbr>自ら<wbr>動く力」。<br class="pc">
+    <wbr>その<wbr>力を<wbr>育む<wbr>人づくりを<wbr>通じて、<wbr>教育・<wbr>企画・<wbr>営業・<wbr>業務支援の<wbr>現場に<wbr>伴走します。</p>
+    <a href="about.html" class="p-btn rv"><span class="p-btn__c" aria-hidden="true"></span><span class="p-btn__t">私たちに<wbr>ついて</span></a>
   </div>
 </section>
 
-<!-- ===== Profile digest ===== -->
-<section class="section" id="profile">
-  <span class="ghost" aria-hidden="true">Profile</span>
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="section-label">Profile</p>
-      <h2 class="section-title">代表紹介</h2>
+<section class="p-sec p-service" id="service">
+  <div class="p-wrap p-service__grid">
+    <div class="p-service__txt">
+      <p class="p-label rv">SERVICE</p>
+      <h2 class="p-h2 rv">育てる。<wbr>形に<wbr>する。<br>成果に<wbr>つなげる。</h2>
+      <p class="p-text rv">人が<wbr>育つ<wbr>仕組みづくりから、<wbr>企画・<wbr>営業・<wbr>日々の<wbr>業務まで。<br class="pc">4つの<wbr>領域で、<wbr>経営の<wbr>現場に<wbr>入り込んで<wbr>伴走します。</p>
+      <a href="service.html" class="p-btn rv"><span class="p-btn__c" aria-hidden="true"></span><span class="p-btn__t">事業領域</span></a>
     </div>
-    <div class="profile-wrap">
-      <figure class="profile-photo reveal reveal-left">
-        <img src="assets/img/ceo_tashiro.jpg" alt="代表取締役社長 田代茂人の写真">
-      </figure>
-      <div class="profile-body reveal reveal-right">
-        <p class="profile-position">代表取締役社長</p>
-        <p class="profile-name">田代 茂人<span class="profile-name-en">Shigeto Tashiro</span></p>
-        <p class="profile-text">
-          美容師から東証プライム上場企業の新規事業開発、外資系教育・組織開発コンサルティング会社での
-          売上世界記録の樹立まで、現場と実践を積み重ねてきた経営者。
-          これまでに100社・延べ10,000名以上のビジネスパーソンの成長と成果創出を支援してきました。
-        </p>
-        <p class="more-wrap" style="text-align: left; margin-top: 40px;"><a href="about.html#profile" class="more-link">View More</a></p>
-      </div>
+    <div class="p-cards">
+      <a href="service.html#education" class="p-card rv" style="--d:0">
+        <span class="p-card__img"><img src="assets/img/p/g/edu_class.webp" alt="スクリーンの前で講師が話し、受講者が聴き入る研修の場面" loading="lazy"></span>
+        <span class="p-card__no">01</span><span class="p-card__en">Education</span><span class="p-card__ja">教育系</span>
+        <span class="p-card__desc">教育企画設計・<wbr>研修講師・<wbr>コーチング</span>
+      </a>
+      <a href="service.html#planning" class="p-card rv" style="--d:1">
+        <span class="p-card__img"><img src="assets/img/p/g/hv2.webp" alt="企画書を書く手元" loading="lazy"></span>
+        <span class="p-card__no">02</span><span class="p-card__en">Planning</span><span class="p-card__ja">企画系</span>
+        <span class="p-card__desc">企画立案・<wbr>資料作成・<wbr>新規事業プロデュース</span>
+      </a>
+      <a href="service.html#sales" class="p-card rv" style="--d:2">
+        <span class="p-card__img"><img src="assets/img/p/g/hv3.webp" alt="資料を手渡す場面" loading="lazy"></span>
+        <span class="p-card__no">03</span><span class="p-card__en">Sales</span><span class="p-card__ja">営業系</span>
+        <span class="p-card__desc">営業戦略立案から<wbr>新規開拓まで</span>
+      </a>
+      <a href="service.html#operation" class="p-card rv" style="--d:3">
+        <span class="p-card__img"><img src="assets/img/p/g/op_ai.webp" alt="AIエージェントのロボットが画面を指して、準備した名簿と案内メールを説明する場面" loading="lazy"></span>
+        <span class="p-card__no">04</span><span class="p-card__en">Operation</span><span class="p-card__ja">業務支援</span>
+        <span class="p-card__desc">業務フロー整備・<wbr>システム化・<wbr>各種代行</span>
+      </a>
     </div>
-    <div class="profile-stats reveal">
-      <div class="stat">
-        <p class="stat-num"><span class="stat-value" data-count="100">100</span><span class="stat-unit">社</span></p>
-        <p class="stat-label">支援企業数</p>
+  </div>
+</section>
+
+<section class="p-story" id="story" aria-label="研修のご依頼から当日までの流れ（動画）">
+  <div class="p-story__stick">
+    <div class="p-wrap p-story__grid">
+      <div class="p-story__film rv">
+        <div class="p-story__frame" id="pStoryFrame">
+          <video class="is-on" data-n="1" muted playsinline preload="none" poster="assets/video/story1.webp" aria-hidden="true"></video>
+          <video data-n="2" muted playsinline preload="none" poster="assets/video/story2.webp" aria-hidden="true"></video>
+          <video data-n="3" muted playsinline preload="none" poster="assets/video/story3.webp" aria-hidden="true"></video>
+          <video data-n="4" muted playsinline preload="none" poster="assets/video/story4.webp" aria-hidden="true"></video>
+        </div>
+        <p class="p-story__cap" id="pStoryCap"><span class="no">01</span><span class="en">Planning</span></p>
       </div>
-      <div class="stat">
-        <p class="stat-num"><span class="stat-value" data-count="10000">10,000</span><span class="stat-unit">名以上</span></p>
-        <p class="stat-label">成長と成果創出を支援した<br>ビジネスパーソン</p>
-      </div>
-      <div class="stat">
-        <p class="stat-num"><span class="stat-value" data-count="19">19</span><span class="stat-unit">四半期連続</span></p>
-        <p class="stat-label">目標達成</p>
+      <div class="p-story__side">
+        <p class="p-label rv">STORY</p>
+        <h2 class="p-h2 rv">研修の<wbr>ご依頼から、<br>当日まで。</h2>
+        <p class="p-text p-story__lead rv">企画・<wbr>営業・<wbr>業務支援・<wbr>教育。<br class="pc">4つの<wbr>領域は、<wbr>1本の<wbr>流れで<wbr>つながっています。</p>
+        <ol class="p-story__ch" id="pStoryCh">
+          <li class="is-on"><button type="button" data-i="0"><span class="no">01</span><span class="ja">企画</span><span class="en">Planning</span></button><span class="bar" aria-hidden="true"><i></i></span><p class="d">AIエージェントと<wbr>並んで、<wbr>企画書を<wbr>一気に<wbr>書き上げる。</p></li>
+          <li><button type="button" data-i="1"><span class="no">02</span><span class="ja">営業</span><span class="en">Sales</span></button><span class="bar" aria-hidden="true"><i></i></span><p class="d">仕上がった<wbr>提案を<wbr>お届けし、<wbr>握手で<wbr>次の<wbr>一歩へ。</p></li>
+          <li><button type="button" data-i="2"><span class="no">03</span><span class="ja">業務支援</span><span class="en">Operation</span></button><span class="bar" aria-hidden="true"><i></i></span><p class="d">名簿や<wbr>案内メールは<wbr>AIエージェントが<wbr>準備。<wbr>人は<wbr>確かめて<wbr>承認するだけ。</p></li>
+          <li><button type="button" data-i="3"><span class="no">04</span><span class="ja">教育</span><span class="en">Education</span></button><span class="bar" aria-hidden="true"><i></i></span><p class="d">研修の<wbr>当日。<wbr>受講者が<wbr>自分から<wbr>手を<wbr>挙げる<wbr>場を<wbr>つくる。</p></li>
+        </ol>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta-band">
-  <span class="ghost ghost-light" aria-hidden="true">Contact</span>
-  <div class="container reveal">
-    <p class="cta-band-en">Contact</p>
-    <p class="cta-band-title">研修・コンサルティング・業務支援のご相談は<br class="pc-only">お気軽にお問い合わせください。</p>
-    <a href="contact.html" class="btn btn-gold">お問い合わせ</a>
+<section class="p-sec p-approach" id="approach">
+  <div class="p-wrap">
+    <div class="p-approach__head">
+      <div>
+        <p class="p-label rv">APPROACH</p>
+        <h2 class="p-h2 rv">伴走の<wbr>進め方</h2>
+      </div>
+      <div class="p-arrows rv">
+        <button type="button" class="p-arrow" data-dir="-1" aria-label="前へ">PREV</button>
+        <button type="button" class="p-arrow" data-dir="1" aria-label="次へ">NEXT</button>
+      </div>
+    </div>
+  </div>
+  <div class="p-slider" id="pSlider" tabindex="0" aria-label="進め方のカード（横にスクロール）">
+    <article class="p-slide rv"><span class="p-slide__img"><img src="assets/img/p/g/step1.webp" alt="" loading="lazy"></span><p class="p-slide__no">STEP 01</p><h3 class="p-slide__t">現場の<wbr>声を<wbr>聞く</h3><p class="p-slide__d">経営者と<wbr>現場の<wbr>両方から、<wbr>いま起きている<wbr>ことと<wbr>目指す姿を<wbr>うかが<wbr>います。</p></article>
+    <article class="p-slide rv"><span class="p-slide__img"><img src="assets/img/p/g/step2.webp" alt="" loading="lazy"></span><p class="p-slide__no">STEP 02</p><h3 class="p-slide__t">仕組みを<wbr>設計する</h3><p class="p-slide__d">研修・<wbr>企画・<wbr>営業・<wbr>業務の<wbr>打ち手を、<wbr>貴社の<wbr>言葉で<wbr>一枚の<wbr>設計に<wbr>まとめます。</p></article>
+    <article class="p-slide rv"><span class="p-slide__img"><img src="assets/img/p/g/step3.webp" alt="" loading="lazy"></span><p class="p-slide__no">STEP 03</p><h3 class="p-slide__t">一緒に<wbr>実行する</h3><p class="p-slide__d">研修の<wbr>登壇や<wbr>資料づくり、<wbr>営業の<wbr>同行まで。<wbr>現場に<wbr>入って<wbr>手を<wbr>動かします。</p></article>
+    <article class="p-slide rv"><span class="p-slide__img"><img src="assets/img/p/g/step4.webp" alt="" loading="lazy"></span><p class="p-slide__no">STEP 04</p><h3 class="p-slide__t">定着まで<wbr>見届ける</h3><p class="p-slide__d">実施して<wbr>終わりに<wbr>せず、<wbr>行動が<wbr>変わったかを<wbr>振り返り、<wbr>次の<wbr>手を<wbr>整えます。</p></article>
+    <article class="p-slide rv"><span class="p-slide__img"><img src="assets/img/p/g/step5.webp" alt="" loading="lazy"></span><p class="p-slide__no">STEP 05</p><h3 class="p-slide__t">成果を<wbr>確かめる</h3><p class="p-slide__d">数字と<wbr>現場の<wbr>手応えの<wbr>両方で<wbr>成果を<wbr>確かめ、<wbr>自走できる<wbr>状態を<wbr>めざします。</p></article>
+  </div>
+  <p class="p-wrap p-note rv"><span>※ 進め方の<wbr>一例です。<wbr>ご相談の<wbr>内容に<wbr>合わせて<wbr>組み立てます。</span></p>
+</section>
+
+<section class="p-dark" id="philosophy">
+  <div class="p-dark__bg" aria-hidden="true"></div>
+  <div class="p-wrap p-dark__grid">
+    <figure class="p-dark__fig rv"><img src="assets/img/p/g/philo_hand.webp" alt="会議の机で、一人が自ら手を挙げる場面" loading="lazy"></figure>
+    <div class="p-dark__txt">
+      <p class="p-label p-label--light rv">PHILOSOPHY</p>
+      <h2 class="p-h2 p-h2--light rv">自ら<wbr>考え、<wbr>自ら<wbr>動く。<br>その<wbr>一歩が、<wbr>組織を<wbr>変える。</h2>
+      <p class="p-text p-text--light rv">教わった<wbr>ことを<wbr>「やってみる」に<wbr>変え、<wbr>続けられる<wbr>人を<wbr>増やす。<br class="pc">私たちは<wbr>研修の<wbr>当日だけでなく、<wbr>その後の<wbr>現場まで<wbr>見届けます。</p>
+      <a href="about.html" class="p-btn p-btn--light rv"><span class="p-btn__c" aria-hidden="true"></span><span class="p-btn__t">ミッションと<wbr>価値観</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="p-sec p-solid p-profile" id="profile">
+  <div class="p-wrap p-row">
+    <div class="p-row__txt">
+      <p class="p-label rv">PROFILE</p>
+      <h2 class="p-h2 rv">代表紹介</h2>
+      <p class="p-name rv"><span class="p-name__pos">代表取締役社長</span>田代 茂人<span class="p-name__en">Shigeto Tashiro</span></p>
+      <p class="p-text rv">美容師から<wbr>東証プライム上場企業の<wbr>新規事業開発、<wbr>外資系教育・<wbr>組織開発コンサルティング会社での<wbr>売上世界記録の<wbr>樹立まで、<wbr>現場と<wbr>実践を<wbr>積み重ねてきた<wbr>経営者。<wbr>これまでに<wbr>100社・<wbr>延べ10,000名以上の<wbr>ビジネスパーソンの<wbr>成長と<wbr>成果創出を<wbr>支援してきました。</p>
+      <a href="about.html#profile" class="p-btn rv"><span class="p-btn__c" aria-hidden="true"></span><span class="p-btn__t">代表メッセージ</span></a>
+    </div>
+    <figure class="p-row__fig p-row__fig--portrait rv"><img src="assets/img/ceo_tashiro.jpg" alt="代表取締役社長 田代茂人の写真" loading="lazy"></figure>
+  </div>
+  <div class="p-wrap p-stats">
+    <div class="p-stat rv"><p class="p-stat__n"><span data-count="100">100</span><small>社</small></p><p class="p-stat__l">支援企業数</p></div>
+    <div class="p-stat rv"><p class="p-stat__n"><span data-count="10000">10,000</span><small>名以上</small></p><p class="p-stat__l">成長と<wbr>成果創出を<wbr>支援した<br>ビジネスパーソン</p></div>
+    <div class="p-stat rv"><p class="p-stat__n"><span data-count="19">19</span><small>四半期連続</small></p><p class="p-stat__l">目標達成</p></div>
+  </div>
+</section>
+
+<section class="p-sec p-solid p-company" id="company">
+  <div class="p-wrap p-row p-row--rev">
+    <figure class="p-row__fig rv"><img src="assets/img/p/g/co_reception.webp" alt="受付ロビーで笑顔で握手する二人" loading="lazy"></figure>
+    <div class="p-row__txt">
+      <p class="p-label rv">COMPANY</p>
+      <h2 class="p-h2 rv">会社概要</h2>
+      <p class="p-text rv">株式会社ST CONSULTINGの<wbr>商号・<wbr>所在地・<wbr>設立・<wbr>役員・<wbr>事業内容を<wbr>ご紹介します。<wbr>東京・<wbr>渋谷区神宮前を<wbr>拠点に、<wbr>企業さまの<wbr>人と<wbr>組織づくりを<wbr>ご支援しています。</p>
+      <a href="company.html" class="p-btn rv"><span class="p-btn__c" aria-hidden="true"></span><span class="p-btn__t">会社概要</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="p-sec p-solid p-contact" id="contact">
+  <div class="p-ribbon" aria-hidden="true"><div class="p-ring" id="pRing"></div></div>
+  <div class="p-wrap">
+    <div class="p-contact__txt">
+      <p class="p-label rv">CONTACT</p>
+      <h2 class="p-h2 rv">次の<wbr>一歩を<br>一緒に<wbr>考え<wbr>行動します。</h2>
+      <p class="p-text rv">研修・<wbr>コンサルティング・<wbr>業務支援の<wbr>ご相談は、<br class="pc">お気軽に<wbr>お問い合わせ<wbr>ください。</p>
+      <a href="contact.html" class="p-btn rv"><span class="p-btn__c" aria-hidden="true"></span><span class="p-btn__t">お問い合わせ</span></a>
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- ===== Footer ===== -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <img src="assets/img/logo_mark_white.png" alt="" class="footer-logo">
-    <p class="footer-company">株式会社ST CONSULTING</p>
-    <p class="footer-address">東京都渋谷区神宮前六丁目23番4号 桑野ビル2階</p>
-    <nav class="footer-nav" aria-label="フッターメニュー">
-      <a href="index.html">トップ</a>
-      <a href="about.html">私たちについて</a>
-      <a href="service.html">事業領域</a>
-      <a href="company.html">会社概要</a>
-      <a href="contact.html">お問い合わせ</a>
+<footer class="p-footer">
+  <div class="p-wrap">
+    <div class="p-footer__map">
+      <div class="p-fcol">
+        <p class="p-fcol__h"><a href="about.html">ABOUT</a></p>
+        <a href="about.html">私たちに<wbr>ついて</a><a href="about.html#mission">ミッション</a><a href="about.html#profile">代表紹介</a>
+      </div>
+      <div class="p-fcol">
+        <p class="p-fcol__h"><a href="service.html">SERVICE</a></p>
+        <a href="service.html#education">教育系</a><a href="service.html#planning">企画系</a><a href="service.html#sales">営業系</a><a href="service.html#operation">業務支援</a>
+      </div>
+      <div class="p-fcol">
+        <p class="p-fcol__h"><a href="company.html">COMPANY</a></p>
+        <a href="company.html">会社概要</a><a href="privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="p-fcol p-fcol--cta">
+        <img src="assets/img/logo_full_color.png" alt="株式会社ST CONSULTING" class="p-footer__logo" width="948" height="96">
+        <p class="p-footer__addr">〒150-0001 東京都渋谷区神宮前六丁目23番4号 桑野ビル2階</p>
+        <a href="contact.html" class="p-pill">お問い合わせ<span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="p-footer__bottom">
+      <p>&copy; 2026 ST CONSULTING Co., Ltd.</p>
       <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 ST CONSULTING Co., Ltd.</p>
+    </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/p.js?v=13"></script>
 </body>
 </html>

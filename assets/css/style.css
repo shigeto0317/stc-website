@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
-/* ============================================
-   ST CONSULTING Corporate Site  v2
-   Design: Deep Navy x Champagne Gold / Luxe
-   ============================================ */
+
 
 :root {
   --navy-black: #0a1426;
@@ -57,7 +54,7 @@ a { color: inherit; text-decoration: none; }
 .pc-only { display: inline; }
 .keep-together { display: inline-block; }
 
-/* ===== Header ===== */
+
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -66,7 +63,7 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.4s, box-shadow 0.4s, transform 0.45s ease;
 }
 
-/* 下スクロールで隠れ、上スクロールで戻る */
+
 .site-header.is-hidden { transform: translateY(-100%); }
 
 .header-inner {
@@ -84,7 +81,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
 }
 
-/* 新ロゴ（2026-10-15・案3）: 濃紺の地では白版、スクロール後の白いヘッダーではカラー版を出し分ける */
+
 .header-logo img {
   height: 30px;
   width: auto;
@@ -139,7 +136,7 @@ a { color: inherit; text-decoration: none; }
 }
 .global-nav .nav-contact::after { display: none; }
 
-/* スクロール後：白ヘッダーに切り替え */
+
 .site-header.is-scrolled {
   background: rgba(251, 251, 250, 0.94);
   backdrop-filter: blur(10px);
@@ -180,7 +177,7 @@ a { color: inherit; text-decoration: none; }
 .site-header.is-scrolled .nav-toggle span,
 .nav-toggle.is-open span { background: var(--navy); }
 
-/* ===== Hero ===== */
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -202,7 +199,7 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
-/* ゆっくり回るオーロラ状の光 */
+
 .hero::after {
   content: "";
   position: absolute;
@@ -264,7 +261,7 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* JSで1文字ずつ<span class="char">に分割して順に立ち上げる */
+
 .hero-title .char {
   display: inline-block;
   opacity: 0;
@@ -277,7 +274,7 @@ a { color: inherit; text-decoration: none; }
   to { opacity: 1; transform: translateY(0) scale(1) rotate(0); filter: blur(0); }
 }
 
-/* ヒーロー要素の時間差フェード */
+
 .hero-en.reveal { transition-delay: 0.15s; }
 .hero-lead.reveal { transition-delay: 1.3s; }
 .hero-cta.reveal { transition-delay: 1.55s; }
@@ -330,7 +327,7 @@ a { color: inherit; text-decoration: none; }
   will-change: transform;
 }
 
-/* ロゴの透かしを回転させる */
+
 .hero-logo-bg img {
   animation: slowSpin 48s linear infinite;
 }
@@ -374,7 +371,7 @@ a { color: inherit; text-decoration: none; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* ===== スポットライト演出（トップページのヒーローのみ） ===== */
+
 .spot-words {
   position: absolute;
   inset: 0;
@@ -391,7 +388,7 @@ a { color: inherit; text-decoration: none; }
   text-shadow: 0 0 20px rgba(203, 185, 140, 0.5);
 }
 
-/* カーソル位置に穴の開いた闇。光の中だけ言葉が見える */
+
 .spot-dark {
   position: absolute;
   inset: 0;
@@ -415,7 +412,7 @@ a { color: inherit; text-decoration: none; }
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* モバイル・タブレットでは通常表示（文字と重なるのを防ぐ） */
+
 @media (max-width: 900px) {
   .spot-words, .spot-dark, .spot-hint { display: none; }
 }
@@ -425,7 +422,7 @@ a { color: inherit; text-decoration: none; }
   .spot-words span { opacity: 0.3; }
 }
 
-/* ===== Buttons ===== */
+
 .btn {
   position: relative;
   overflow: hidden;
@@ -438,7 +435,7 @@ a { color: inherit; text-decoration: none; }
   transition: background 0.35s, color 0.35s, border-color 0.35s, box-shadow 0.35s;
 }
 
-/* ホバー時に光が走る */
+
 .btn::before {
   content: "";
   position: absolute;
@@ -465,7 +462,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 8px 32px rgba(182, 160, 105, 0.25);
 }
 
-/* ===== Sections (common) ===== */
+
 .section {
   padding: 140px 0;
   position: relative;
@@ -538,7 +535,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.08em;
 }
 
-/* ===== Mission ===== */
+
 .mission-body { text-align: center; }
 
 .mission-statement {
@@ -558,7 +555,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.1em;
 }
 
-/* ===== Service ===== */
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -636,7 +633,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--gold);
 }
 
-/* ===== Flow ===== */
+
 .flow-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -693,7 +690,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 2.1;
 }
 
-/* ===== Profile ===== */
+
 .profile-wrap {
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -803,7 +800,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.9;
 }
 
-/* ===== Company ===== */
+
 .company-table {
   max-width: 780px;
   margin: 0 auto;
@@ -830,7 +827,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.06em;
 }
 
-/* 会社概要の事業内容（4つの事業領域） */
+
 .biz-areas { display: grid; gap: 15px; }
 
 .biz-area-head {
@@ -858,14 +855,14 @@ a { color: inherit; text-decoration: none; }
 
 .biz-area-items { line-height: 1.85; }
 
-/* 項目は語の途中で折り返さず、区切りごとに改行する */
+
 .biz-area-items span { display: inline-block; }
 .biz-area-items span:not(:last-child)::after {
   content: "／";
   color: var(--navy-soft);
 }
 
-/* ===== Contact ===== */
+
 .section-contact {
   background:
     radial-gradient(ellipse 80% 90% at 20% 100%, rgba(58, 84, 138, 0.35) 0%, rgba(16, 31, 61, 0) 60%),
@@ -892,7 +889,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.14em;
 }
 
-/* ===== Footer ===== */
+
 .site-footer {
   background: var(--navy-black);
   padding: 72px 32px 44px;
@@ -928,7 +925,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.2em;
 }
 
-/* ===== 下層ページ共通 ===== */
+
 .page-hero {
   position: relative;
   overflow: hidden;
@@ -966,7 +963,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--white);
 }
 
-/* View More リンク */
+
 .more-wrap { text-align: center; margin-top: 64px; }
 
 .more-link {
@@ -990,7 +987,7 @@ a { color: inherit; text-decoration: none; }
 .more-link:hover { color: var(--gold); }
 .more-link:hover::after { width: 76px; background: var(--gold); }
 
-/* お問い合わせへの誘導帯 */
+
 .cta-band {
   position: relative;
   overflow: hidden;
@@ -1019,7 +1016,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 2;
 }
 
-/* フッターナビ */
+
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1037,10 +1034,10 @@ a { color: inherit; text-decoration: none; }
 
 .footer-nav a:hover { color: var(--gold-soft); }
 
-/* 現在ページのナビ強調 */
+
 .global-nav a.is-current::after { transform: scaleX(1); }
 
-/* プライバシーポリシー等の文章ページ */
+
 .policy-body {
   max-width: 800px;
   margin: 0 auto;
@@ -1102,13 +1099,13 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-soft);
 }
 
-/* お問い合わせページ（ページヒーローなしで直接ダークセクション） */
+
 .contact-page .section-contact {
   padding: calc(var(--header-h) + 140px) 0 160px;
   min-height: 78vh;
 }
 
-/* ===== Reveal animation ===== */
+
 .reveal {
   opacity: 0;
   transform: translateY(60px) scale(0.98);
@@ -1123,7 +1120,7 @@ a { color: inherit; text-decoration: none; }
   transform: none;
 }
 
-/* 見出しは字間が締まりながら現れる */
+
 .section-head .section-title {
   opacity: 0;
   letter-spacing: 0.5em;
@@ -1135,7 +1132,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.2em;
 }
 
-/* 下層ページタイトルの登場 */
+
 .page-hero-en {
   animation: pageFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both 0.15s;
 }
@@ -1154,7 +1151,7 @@ a { color: inherit; text-decoration: none; }
   to { opacity: 1; transform: translateY(0); letter-spacing: 0.22em; }
 }
 
-/* 代表写真は左からワイプで現れる */
+
 .profile-photo img {
   clip-path: inset(0 100% 0 0);
   transition: clip-path 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
@@ -1164,7 +1161,7 @@ a { color: inherit; text-decoration: none; }
   clip-path: inset(0 0 0 0);
 }
 
-/* ===== 金の粒子（JSが .particle-layer を生成） ===== */
+
 .particle-layer {
   position: absolute;
   inset: 0;
@@ -1190,7 +1187,7 @@ a { color: inherit; text-decoration: none; }
   100% { transform: translateY(-92vh) translateX(var(--dx, 0px)); opacity: 0; }
 }
 
-/* ===== ページ遷移フェード ===== */
+
 body {
   animation: pageIn 0.7s ease both;
 }
@@ -1205,7 +1202,7 @@ body.is-leaving {
   transition: opacity 0.35s ease;
 }
 
-/* カード類は少しずつ時間差で出す */
+
 .service-card:nth-child(2), .flow-step:nth-child(2) { transition-delay: 0.12s; }
 .service-card:nth-child(3), .flow-step:nth-child(3) { transition-delay: 0.24s; }
 .service-card:nth-child(4), .flow-step:nth-child(4) { transition-delay: 0.36s; }
@@ -1225,7 +1222,7 @@ body.is-leaving {
   .site-header.is-hidden { transform: none; }
 }
 
-/* ===== Responsive ===== */
+
 @media (max-width: 1024px) {
   .service-grid, .flow-steps { grid-template-columns: repeat(2, 1fr); }
   .flow-step:not(:last-child)::after { display: none; }
@@ -1300,7 +1297,7 @@ body.is-leaving {
   .stat { padding: 36px 20px; }
   .ghost { font-size: 96px; top: 28px; }
 }
-/* ===== 事業領域パネル（都市選択パネルの構造） ===== */
+
 .domain-section {
   position: relative;
   background: var(--navy-black);
@@ -1339,7 +1336,7 @@ body.is-leaving {
 .domain-panel:nth-child(3) { background: linear-gradient(165deg, #1c3461 0%, #12234a 55%, #0a1426 100%); }
 .domain-panel:nth-child(4) { background: linear-gradient(165deg, #132038 0%, #0d1830 60%, #080f20 100%); }
 
-/* 背景の大きな番号 */
+
 .domain-num {
   position: absolute;
   top: 24px;
@@ -1353,7 +1350,7 @@ body.is-leaving {
   transition: color 0.5s;
 }
 
-/* ホバーで金の光がにじむ */
+
 .domain-panel::before {
   content: "";
   position: absolute;
@@ -1438,3 +1435,11 @@ body.is-leaving {
   .domain-num { font-size: 80px; }
   .domain-head { padding: 72px 24px 40px; }
 }
+
+
+body { word-break: keep-all; overflow-wrap: break-word; }
+
+@media (max-width: 600px) { .page-hero-title { font-size: 26px; letter-spacing: .08em; white-space: nowrap; } }
+
+html { overflow-x: clip; }
+.particle-layer, .page-hero { contain: paint; }
